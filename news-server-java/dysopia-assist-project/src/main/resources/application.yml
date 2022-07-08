@@ -1,0 +1,29 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://114.116.33.249:3306/dysopia?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: mysql1130
+
+  # 配置文件上传限制
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+SavePath:
+  upload-folder: D:/imgs/
+
+
+mybatis-plus:
+  type-aliases-package: com.dysopia.dysopiaassistproject.*.pojo
+#  mapper-locations: classpath:/com/dysopia/dysopiaassistproject/*/mapper/*.xml
+  global-config:
+    db-config:
+      # 主键id生成策略： AUTO-自动增长, NONE-未设置, INPUT-手动输入, ASSIGN_ID-雪花算法, ASSIGN_UUID-排除中划线的UUID
+      id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
